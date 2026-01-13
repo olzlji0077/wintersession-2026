@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwan Cho</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mwk4jta.css">
+
+</head>
+
+<style>
+    #header, #sidebar, #content-one, #content-two, #content-three, #footer { 
+background-color: lightblue; 
+padding: 20px;
+}
+
+    #grid-example-one {
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px; 
+    border: 2px solid #000000; 
+    margin-bottom: 20px; 
+    padding: 0;
+    }
+    #grid-example-two { 
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(6, 1fr); 
+    gap: 10px; 
+    }
+
+    #header {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+    #sidebar {
+        grid-row: 2 / 6;
+        grid-column: 1 / 2;
+    }
+    #content-one {
+	grid-row-start: 2; 
+    grid-row-end: 4; 
+    grid-column-start: 2; 
+    grid-column-end: 6;
+}
+    #content-two {
+        grid-row-start: 4; 
+        grid-row-end: 6; 
+        grid-column-start: 2; 
+        grid-column-end: 4;
+    }
+    #content-three {
+        grid-row-start: 4; 
+        grid-row-end: 6; 
+        grid-column-start: 4; 
+        grid-column-end: 6;
+    }
+    #footer {
+        grid-row-start: 6; 
+        grid-row-end: 7; 
+        grid-column-start: 1; 
+        grid-column-end: 6;
+    }
+
+</style>
+
+<body>
+    <div id="grid-example-two">
+<div id="header">Header</div> 
+<div id="sidebar">Sidebar</div> 
+<div id="content-one">Content 1</div> 
+<div id="content-two">Content 2</div> 
+<div id="content-three">Content 3</div> 
+<div id="footer">Footer</div> 
+</div>
+
+</body>
