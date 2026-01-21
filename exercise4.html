@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwan Cho</title>
+    <link rel="stylesheet" href="https://use.typekit.net/mwk4jta.css">
+    <title>My Steam Game Archive</title>
+</head>
+    <style>
+        body {
+            background-color: #1b2838;
+            color: white;
+            margin: 0;
+            font-family: "Malgun Gothic", sans-serif;
+        }
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            grid-template-rows: 100px 1fr 60px;
+            min-height: 100vh;
+        }
+
+        .header {
+            grid-column: 1 / 4;
+            background-color: #171a21;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            border-bottom: 2px solid #66c0f4;
+        }
+
+        .nav {
+            grid-column: 1 / 2;
+            background-color: #2a475e;
+            padding: 20px;
+        }
+
+        .main {
+            grid-column: 2 / 3;
+            background-color: #1b2838;
+            padding: 30px;
+        }
+
+        .aside {
+            grid-column: 3 / 4;
+            background-color: #171a21;
+            padding: 20px;
+        }
+
+        .footer {
+            grid-column: 1 / 4;
+            background-color: #171a21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            border-top: 1px solid #333;
+        }
+
+        .game-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fill, 180px); 
+            justify-content: center; 
+        }
+
+        .game-card {
+            background-color: #23262e;
+            border: 1px solid #3d4450;
+            width: 180px;
+            height: 180px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .game-card h3 {
+            font-size: 13px;
+            color: #66c0f4;
+            text-align: center;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <h1>MY STEAM GAME DRAWER</h1>
+        </header>
+
+        <nav class="nav">
+            <h3 style="border-bottom: 1px solid #66c0f4; padding-bottom: 10px;">Menu</h3>
+            <p>All Games (20)</p>
+            <p>Favorites</p>
+            <p>Recent Plays</p>
+        </nav>
+
+        <main class="main">
+            <h2 style="margin-bottom: 20px;">Archiving My Games</h2>
+            
+            <div class="game-grid">
+                <div class="game-card"><h3>Urban Myth Dissolution Center</h3></div>
+                <div class="game-card"><h3>Sanabi: The Revenant</h3></div>
+                <div class="game-card"><h3>Phoenix Wright: Ace Attorney</h3></div>
+                <div class="game-card"><h3>Persona 5 The Royal</h3></div>
+                <div class="game-card"><h3>Persona 3 Reload</h3></div>
+                <div class="game-card"><h3>Persona 4 Golden</h3></div>
+                <div class="game-card"><h3>Chants of Sennaar</h3></div>
+                <div class="game-card"><h3>Darkest Dungeon</h3></div>
+                <div class="game-card"><h3>Final Fantasy VII - Remastered</h3></div>
+                <div class="game-card"><h3>Hollow Knight</h3></div>
+                <div class="game-card"><h3>Hollow Knight: Silksong</h3></div>
+                <div class="game-card"><h3>Nier: Automata</h3></div>
+                <div class="game-card"><h3>Return of the Obra Dinn</h3></div>
+                <div class="game-card"><h3>Stray</h3></div>
+                <div class="game-card"><h3>The Painscreek Killings</h3></div>
+                <div class="game-card"><h3>Subnautica</h3></div>
+                <div class="game-card"><h3>We Were Here Together</h3></div>
+                <div class="game-card"><h3>We Were Here Forever</h3></div>
+                <div class="game-card"><h3>Dark Souls 3</h3></div>
+                <div class="game-card"><h3>Sekiro</h3></div>
+            </div>
+        </main>
+
+        <aside class="aside">
+            <h3>Friend List</h3>
+            <p style="font-size: 14px; color: #8f98a0;">● My Best Friend</p>
+            <p style="font-size: 14px; color: #8f98a0;">○ Offline Friend</p>
+        </aside>
+
+        <footer class="footer">
+            <p>Web Programming Class - Holy Grail Layout Assignment</p>
+        </footer>
+    </div>
+
+</body>
+</html>
