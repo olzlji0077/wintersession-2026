@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIU404: MOBILE INVESTIGATIVE UNIT</title>
+    <style>
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: #000;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            overflow: hidden;
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            transition: background-color 0.4s ease;
+        }
+
+        .van-container {
+            width: 350px; 
+            transition: all 0.5s ease-in-out;
+            z-index: 2;
+        }
+
+        .van-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .info-panel {
+            margin-top: 40px;
+            color: #f1c40f;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-align: center;
+            z-index: 2;
+            transition: color 0.4s;
+        }
+
+        .info-panel::after {
+            content: "MIU404 UNIT: STANDBY";
+        }
+
+        .credit {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            letter-spacing: 1px;
+            z-index: 3;
+        }
+
+        @media (min-width: 1400px) {
+            .van-container { 
+                transform: scale(1); 
+                animation: float 3s infinite ease-in-out; 
+            }
+            @keyframes float { 
+                0%, 100% { transform: translateY(0); } 
+                50% { transform: translateY(-15px); } 
+            }
+        }
+
+        @media (max-width: 1399px) and (min-width: 1100px) {
+            body { background-color: #1a0000; }
+            .van-container { 
+                animation: shake 0.1s infinite; 
+                filter: drop-shadow(0 0 15px #e74c3c);
+            }
+            .info-panel { color: #f1c40f; }
+            .info-panel::after { content: "DISPATCH ORDER: MIU404 GO!"; }
+
+            @keyframes shake {
+                0% { transform: translate(1px, 1px); }
+                50% { transform: translate(-1px, -2px); }
+                100% { transform: translate(1px, -1px); }
+            }
+        }
+
+        @media (max-width: 1099px) and (min-width: 800px) {
+            body { 
+                background-image: repeating-linear-gradient(0deg, #111, #111 2px, #1a1a1a 2px, #1a1a1a 4px);
+            }
+            .van-container {
+                filter: grayscale(0.8) contrast(1.5) blur(0.5px);
+                animation: shake 0.1s infinite;
+            }
+            .info-panel { 
+                color: #ffffff; 
+                text-shadow: 2px 2px #e74c3c; 
+            }
+            .info-panel::after { content: "ERROR: 404 NOT FOUND - TARGET MISSING"; }
+
+            @keyframes shake {
+                0% { transform: translate(1px, 1px); }
+                50% { transform: translate(-1px, -2px); }
+                100% { transform: translate(1px, -1px); }
+            }
+        }
+
+        @media (max-width: 799px) {
+            body { background-color: #001a0a; }
+            .van-container {
+                transform: scale(0.85);
+                filter: drop-shadow(0 0 25px #2ecc71);
+                animation: float 3s infinite ease-in-out;
+            }
+            .info-panel { color: #2ecc71; }
+            .info-panel::after { content: "MISSION COMPLETE: DATA SECURED"; }
+
+            @keyframes float { 
+                0%, 100% { transform: translateY(0); } 
+                50% { transform: translateY(-15px); } 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="van-container">
+        <img src="image/melon-van.png" alt="MIU404 Melon Van">
+    </div>
+
+    <div class="info-panel"></div>
+
+    <a href="https://x.com/Dummy__404" target="_blank" class="credit">
+        Illustration by @Dummy__404
+    </a>
+
+</body>
