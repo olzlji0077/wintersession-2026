@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7,8</title>
+    <style>
+        body { 
+            margin: 0; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #000; 
+            cursor: pointer;
+            overflow: hidden;
+        }
+        h1 { 
+            color: white; 
+            font-family: Arial, sans-serif;
+            pointer-events: none;
+            text-align: center;
+        }
+        .text-box {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;    
+        text-align: center;
+        z-index: 10;
+        max-width: 800px;       
+        pointer-events: none;
+        }
+
+        .text {
+            margin-top: 20px; 
+            max-width: 700px; 
+            color: #ffffff; 
+            font-size: 0.9rem;
+            line-height: 1.6;
+            z-index: 10;
+            pointer-events: none; 
+            padding: 0 20px;
+        }
+        .shape { position: absolute; pointer-events: none; transition: transform 0.2s; }
+    </style>
+</head>
+<body>
+    <div class="text-box">
+    <h1>Click anywhere to create Random Shapes</h1>
+    <div class="text">
+            <p>
+                My experience using an AI chatbot for this assignment was highly efficient, as it dramatically reduced the time I would have otherwise spent searching for specific JavaScript functions and syntax. Being able to generate complex logic in seconds gave me a massive advantage in terms of productivity. However, this convenience comes with a lack of deep understanding of theh code because the AI provides the solution instantly that I found it difficult to fully understand the underlying mechanics of the code it produced.
+                <br><br>
+                This became particularly evident when I tried to modify a specific detail, like the rotation effect. Because I didn't fully understand the initial code, I had to return to the AI with more questions rather than fixing it myself. It made me realize that if I had understood the code from the start, I could have made those adjustments in just a few minutes manually. This experience led me to conclude that while AI is an incredibly powerful tool that offers undeniable convenience, it is most effective in the hands of an expert. For a beginner, it can sometimes be a 'crutch' that creates a loop of dependency. Ultimately, while I appreciate the speed AI provides, it reinforced the importance of learning the fundamentals so that I can lead the AI, rather than just following its output.
+            </p>
+        </div>
+    </div>
+    </body>
+
+<script>
+/* my code to create random colors also used for exercise 6 */
+function getRandomRGB() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`; 
+}
+
+/*added after I generated the code below*/
+window.addEventListener('click', (event) => {
+    if (event.target.closest('.reflection-text')) return;
+    createShape(event.clientX, event.clientY);
+});
+
+/* Generated with the help of chatGPT to handle the dynamic creation and styling of elements.*/
+    // AI generated logic for random sizing and styling
+   function createShape(x, y) {
+    const shape = document.createElement('div');
+    shape.classList.add('shape');
+    
+    const size = Math.floor(Math.random() * 100) + 20; 
+    const isCircle = Math.random() > 0.5;
+    
+    shape.style.width = `${size}px`;
+    shape.style.height = `${size}px`;
+
+    shape.style.backgroundColor = getRandomRGB(); 
+    
+    shape.style.left = `${x - size / 2}px`;
+    shape.style.top = `${y - size / 2}px`;
+    shape.style.borderRadius = isCircle ? '50%' : '4px';
+    
+    shape.style.transform = "rotate(0deg) scale(0)";
+    document.body.appendChild(shape);
+    
+    // Initial state for animation (scale 0)
+    shape.style.transform = `rotate(0deg) scale(0)`;
+    
+    document.body.appendChild(shape);
+
+    // AI recommended a small timeout to trigger the CSS transition
+    setTimeout(() => {
+        const rotation = Math.floor(Math.random() * 360);
+        shape.style.transform = `rotate(${rotation}deg) scale(1)`;
+    }, 10);
+    
+    // Automatically removes elements after 4 seconds to prevent performance lag
+    setTimeout(() => {
+        shape.style.opacity = '0';
+        setTimeout(() => shape.remove(), 1000);
+    }, 4000);
+}
+</script>
+</body>
